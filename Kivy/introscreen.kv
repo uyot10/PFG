@@ -1,0 +1,69 @@
+#:import utils kivy.utils
+
+<IntroScreen>:
+	name: 'intro'
+	canvas.before:
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: 'europa.jpg'
+
+	canvas:
+		Color:
+			rgba: (99/255,96/255,102/255,1)
+
+		RoundedRectangle:
+			size: 780,75
+			pos: 10,510
+			radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+		RoundedRectangle:
+			size: 550,450
+			pos: 40,30
+			radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+		
+
+	Button:
+		text: 'Continuar'
+		font_size: 18
+		pos_hint: {'x': .800, 'y': .05}
+		size_hint: .175, .075
+		on_release: 
+			root.manager.transition = FadeTransition()
+			app.change_screen('start_screen')
+
+	Label:
+		text: "Oficina de información y turismo"
+		font_size: 35
+		color: (1,1,1,1)
+		bold: True
+		italic: True
+		pos: 5,245
+		outline_color: (0,0,0)
+		outline_width: 2
+
+	Label:
+		text: "Introducción"
+		font_size: 28
+		color: (1,1,1,1)
+		bold: True
+		italic: True
+		pos: -230, 130
+
+	Label:
+		text: "Esta aplicación ofrece información al turista sobre las valoraciones hechas por miles de usuarios sobre las diferentes categorías turísticas en Europa de manera gráfica."
+		font_size: 16
+		color: (1,1,1,1)
+		bold: True
+		pos: -110, 210
+		halign: 'left'
+		text_size: 400, 450
+
+	Label:
+		text: "Por otro lado, brinda la posibilidad al turista de introducir sus gustos en la aplicación y mediante un análisis de grupos previo, añade al usuario a uno de los grupos según gustos similares. Además recomienda al usuario gráficamente las categorías más y menos valoradas por los usuarios de su mismo grupo, para tener una perspectiva más amplia de qué visitar."
+		font_size: 16
+		color: (1,1,1,1)
+		bold: True
+		pos: -110, 50
+		halign: 'left'
+		text_size: 400, 450

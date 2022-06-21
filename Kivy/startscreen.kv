@@ -1,0 +1,57 @@
+<StartScreen>:
+	canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'europa.jpg'	
+
+
+
+	FloatLayout:
+		pos: 0,0
+		size: root.width, root.height
+
+		canvas:
+			Color:
+				rgba: (99/255,96/255,102/255,1)
+			RoundedRectangle:
+				size: 780,75
+				pos: 10,510
+				radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+		Label:
+			text: "Oficina de información y turismo"
+			font_size: 35
+			color: (1,1,1,1)
+			bold: True
+			italic: True
+			pos: 5,245
+			outline_color: (0,0,0)
+			outline_width: 2
+
+		Button:
+			text: 'Información'
+			font_size: 18
+			pos_hint: {'x': .075, 'y': .1}
+			pos: 100, 100
+			size_hint: .25, .075
+			on_release:
+				root.manager.transition = FadeTransition()
+				app.change_screen('info_screen')
+
+
+		Button:
+			text: 'Recomendación'
+			font_size: 18
+			pos_hint: {'x': .375, 'y': .1}
+			size_hint: .25, .075
+			on_release:
+				root.manager.transition = FadeTransition()
+				app.change_screen('reco_screen')
+
+		Button:
+			text: 'Salir'
+			font_size: 18
+			pos_hint: {'x': .675, 'y': .1}
+			size_hint: .25, .075
+			on_release: quit()

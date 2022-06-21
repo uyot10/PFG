@@ -1,0 +1,508 @@
+<FinalRecoScreen>:
+	name: 'final'
+	canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'europa.jpg'
+
+
+
+    FloatLayout:
+		pos: 0,0
+		size: root.width, root.height
+    	
+    	canvas:
+			Color:
+				rgba: (99/255,96/255,102/255,1)
+			RoundedRectangle:
+				size: 780,75
+				pos: 10,510
+				radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+		Label:
+			text: "Recomendación"
+			font_size: 35
+			color: (1,1,1,1)
+			bold: True
+			italic: True
+			pos: 5,245
+			outline_color: (0,0,0)
+			outline_width: 2
+
+		Button:
+			text: 'Continuar'
+			font_size: 15
+			pos_hint: {'x': .825, 'y': .03}
+			size_hint: .15, .075
+			on_release:
+				root.manager.transition = FadeTransition()
+				app.change_screen('end_screen')
+
+		Button:
+			font_size: 15
+			pos_hint: {'x': .825, 'y': .23}
+			size_hint: .15, .075
+			text: "Añadir"
+			on_press: root.press()
+
+		Label:
+			id: name_label_resultado
+			text: ""
+			pos_hint: {'x': .825, 'y': .13}
+			size_hint: (.15, .075)
+			font_size: 15
+			background_color: (99/255, 96/255, 102/255, 1)
+			canvas.before:
+				Color:
+					rgba: self.background_color
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+		BoxLayout:
+
+			id : box1
+			orientation: "vertical"
+			size_hint: (.25, .85)
+			spacing: 10
+			padding: 30
+
+			Label:
+				id: name_label_cafeteria
+				text: "Cafeterías"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_ccs
+				text: "Centros Comerciales"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_discoteca
+				text: "Discotecas"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_galeria
+				text: "Galerías de arte"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_gimnasio
+				text: "Gimnasios"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_burger
+				text: "Burgers/Pizzerías"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_hotel
+				text: "Hoteles"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_iglesia
+				text: "Iglesias"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_jardin
+				text: "Jardines públicos"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_mirador
+				text: "Miradores"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_monumentos
+				text: "Monumentos"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+			Label:
+				id: name_label_museos
+				text: "Museos"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+		BoxLayout:
+
+			id : box2
+			orientation: "vertical"
+			pos_hint: {'x': .18, 'y': .001}
+			size_hint: (.25, .85)
+			spacing: 10
+			padding: 30
+
+			TextInput:
+				id: name_input1
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input2
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input3
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input4
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input5
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input6
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input7
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input8
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input9
+				multiline: False
+				size_hint: (.6, .5)	
+
+			TextInput:
+				id: name_input10
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input11
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input12
+				multiline: False
+				size_hint: (.6, .5)
+
+		BoxLayout:
+
+			id : box3
+			orientation: "vertical"
+			size_hint: (.25, .85)
+			pos_hint: {'x': .40, 'y': .001}
+			spacing: 10
+			padding: 30
+
+			Label:
+				id: name_label_panaderia
+				text: "Panaderías"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_parque
+				text: "Parques"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_piscinas
+				text: "Piscinas"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_playas
+				text: "Playas"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_pubs
+				text: "Pubs/Bares"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_resorts
+				text: "Resorts"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_restaurantes
+				text: "Restaurantes"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_servicios
+				text: "Servicios locales"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_spas
+				text: "Spas"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_teatros
+				text: "Teatros"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Label:
+				id: name_label_zoos
+				text: "Zoos"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+			Label:
+				id: name_label_zumerias
+				text: "Zumerías"
+				size_hint: (1, .5)
+				font_size: 14
+				background_color: (99/255, 96/255, 102/255, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+		BoxLayout:
+
+			id : box4
+			orientation: "vertical"
+			pos_hint: {'x': .58, 'y': .001}
+			size_hint: (.25, .85)
+			spacing: 10
+			padding: 30
+
+			TextInput:
+				id: name_input13
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input14
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input15
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input16
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input17
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input18
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input19
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input20
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input21
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input22
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input23
+				multiline: False
+				size_hint: (.6, .5)
+
+			TextInput:
+				id: name_input24
+				multiline: False
+				size_hint: (.6, .5)

@@ -1,0 +1,362 @@
+<InfoScreen>:
+	name: 'info'
+	canvas.before:
+    	Rectangle:
+        	pos: self.pos
+            size: self.size
+            source: 'europa.jpg'
+
+	canvas:
+		Color:
+			rgba: (99/255,96/255,102/255,1)
+		RoundedRectangle:
+			size: 780,75
+			pos: 10,510
+			radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+	Label:
+		text: "Información"
+		font_size: 35
+		color: (1,1,1,1)
+		bold: True
+		italic: True
+		pos: 5,245
+		outline_color: (0,0,0)
+		outline_width: 2
+
+	Button:
+		text: 'Volver'
+		font_size: 15
+		pos_hint: {'x': .825, 'y': .03}
+		size_hint: .15, .075
+		on_release:
+			root.manager.transition = FadeTransition()
+			app.change_screen('start_screen')
+
+	ScrollView:
+		size_hint_x: .80
+		size_hint_y: .63
+		pos_hint: {'x':.05, 'y': .13}
+    	do_scroll_x: False
+    	do_scroll_y: True
+
+    	GridLayout:
+    		size: (.8,.8)
+    		size_hint_x: None
+    		size_hint_y: None
+    		cols: 1
+    		height: self.minimum_height
+    		row_default_height: 40
+    		row_force_default: True
+    		col_default_width: 600
+    		col_force_default: True
+
+    		Carousel:
+    			direction: 'left'
+    			canvas:
+    				Color:
+						rgba: (99/255,96/255,102/255,1)
+    				Rectangle:
+						size: self.size
+						pos: self.pos    				
+				Label:
+					text: "Escoja la categoría turística sobre la que desea ver información"
+					font_size: 20
+					color: (1,1,1,1)
+					bold: True
+					pos: 0,0
+					outline_color: (0,0,0)
+					outline_width: 2
+    		Button:
+    			text: 'Cafeterías'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.cafes()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Centros Comerciales'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.ccomerciales()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Discotecas'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.discos()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Galerías de arte'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.galerias()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Gimnasios'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.gimnasios()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Hamburgueserías/Pizzerías'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.burgerpizza()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Hoteles'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.hoteles()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Iglesias'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release:
+    				root.iglesias()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Jardines públicos'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.jardines()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Miradores'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.miradores()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Monumentos'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.monumentos()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Museos'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.museos()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Panaderías'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.panaderias()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Parques'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.parques()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Piscinas'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.piscinas()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height 
+    		Button:
+    			text: 'Playas'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.playas()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Pubs/Bares'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.pubsbars()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Resorts'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.resorts()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Restaurantes'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.restaurantes()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Servicios locales'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.servicioslocales()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    		Button:
+    			text: 'Spas'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.spas()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+
+    		Button:
+    			text: 'Teatros'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.teatros()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+    			
+    		Button:
+    			text: 'Zoos'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.zoos()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+
+    		Button:
+    			text: 'Zumerías'
+    			font_size: 15
+    			bold: True
+    			background_color: (77/255,189/255,133/255,1)
+    			on_release: root.zumos()
+    			canvas.before:
+    				Color:
+    					rgba: (0,0,0,1)
+    				Line: 
+    					width: 2
+    					rectangle: self.x, self.y, self.width,self.height
+

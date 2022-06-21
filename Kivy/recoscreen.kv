@@ -1,0 +1,89 @@
+<RecoScreen>:
+	name: 'reco'
+	canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'europa.jpg'
+
+
+
+    FloatLayout:
+		pos: 0,0
+		size: root.width, root.height
+    	
+    	canvas:
+			Color:
+				rgba: (99/255,96/255,102/255,1)
+			RoundedRectangle:
+				size: 780,75
+				pos: 10,510
+				radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+			RoundedRectangle:
+				size: 600,450
+				pos: 40,30
+				radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+		Label:
+			text: "Recomendación"
+			font_size: 35
+			color: (1,1,1,1)
+			bold: True
+			italic: True
+			pos: 5,245
+			outline_color: (0,0,0)
+			outline_width: 2
+
+		Label:
+			text: "Se han creado grupos de usuarios con gustos similares para determinar la recomendación óptima"
+			font_size: 17
+			color: (1,1,1,1)
+			bold: True
+			pos: -40, 310
+			halign: 'left'
+			text_size: 550,450
+
+		Label:
+			text: "Herramienta para determinar el número óptimo de grupos"
+			font_size: 16
+			color: (1,1,1,1)
+			bold: True
+			pos: -160, 175
+			halign: 'left'
+			text_size: 300,450
+
+		Label:
+			text: "Representación gráfica de los grupos de usuarios mediante el algoritmo 'K-means'"
+			font_size: 16
+			color: (1,1,1,1)
+			bold: True
+			pos: -160, 20
+			halign: 'left'
+			text_size: 300,450
+
+		Button:
+			text: 'Mostrar'
+			font_size: 15
+			pos_hint: {'x': .6, 'y': .4}
+			size_hint: .15, .075
+			on_release:
+				root.codo()
+
+		
+		Button:
+			text: 'Mostrar'
+			font_size: 15
+			pos_hint: {'x': .6, 'y': .15}
+			size_hint: .15, .075
+			on_release:
+				root.cluster()
+
+
+		Button:
+			text: 'Continuar'
+			font_size: 15
+			pos_hint: {'x': .825, 'y': .03}
+			size_hint: .15, .075
+			on_release:
+				root.manager.transition = FadeTransition()
+				app.change_screen('final_reco_screen')

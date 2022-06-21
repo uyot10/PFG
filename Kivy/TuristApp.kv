@@ -1,0 +1,42 @@
+#:kivy 2.0.0
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:include introscreen.kv
+#:include startscreen.kv
+#:include infoscreen.kv
+#:include recoscreen.kv
+#:include finalrecoscreen.kv
+#:include endscreen.kv
+
+ScreenManager:
+
+	id: screen_manager
+
+	IntroScreen:
+		name: 'intro_screen'
+		id: intro_screen
+	StartScreen:
+		name: 'start_screen'
+		id: start_screen
+	InfoScreen:
+		name: 'info_screen'
+		id: info_screen
+	RecoScreen:
+		name: 'reco_screen'
+		id: reco_screen	
+	FinalRecoScreen:
+		name: 'final_reco_screen'
+		id: final_reco_screen
+	EndScreen:
+		name: 'end_screen'
+		id: end_screen
+
+
+
+
+
+
+
+
+
+
+    					    					

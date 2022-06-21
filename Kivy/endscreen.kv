@@ -1,0 +1,78 @@
+#:import utils kivy.utils
+
+<EndScreen>:
+	name: 'end'
+	canvas.before:
+		Rectangle:
+			pos: self.pos
+			size: self.size
+			source: 'europa.jpg'
+
+	canvas:
+		Color:
+			rgba: (99/255,96/255,102/255,1)
+
+		RoundedRectangle:
+			size: 780,75
+			pos: 10,510
+			radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+
+		RoundedRectangle:
+			size: 600,110
+			pos: 80,350
+			radius: [(40, 40), (40, 40), (40, 40), (40, 40)]
+		
+
+	Button:
+		text: 'Volver'
+		font_size: 15
+		pos_hint: {'x': .850, 'y': .05}
+		size_hint: .125, .06
+		on_release: 
+			root.manager.transition = FadeTransition()
+			app.change_screen('start_screen')
+
+	Button:
+		text: 'Grupo 0'
+		font_size: 18
+		pos_hint: {'x': .225, 'y': .40}
+		size_hint: .175, .075
+		on_press: root.grupo0()
+
+	Button:
+		text: 'Grupo 1'
+		font_size: 18
+		pos_hint: {'x': .525, 'y': .40}
+		size_hint: .175, .075
+		on_press: root.grupo1()
+
+	Button:
+		text: 'Grupo 2'
+		font_size: 18
+		pos_hint: {'x': .225, 'y': .20}
+		size_hint: .175, .075
+		on_press: root.grupo2()
+
+	Button:
+		text: 'Grupo 3'
+		font_size: 18
+		pos_hint: {'x': .525, 'y': .20}
+		size_hint: .175, .075
+		on_press: root.grupo3()
+	Label:
+		text: "Recomendación"
+		font_size: 35
+		color: (1,1,1,1)
+		bold: True
+		italic: True
+		pos: 5,245
+		outline_color: (0,0,0)
+		outline_width: 2
+
+	Label:
+		text: "El usuario habrá sido añadido a uno de los grupos según sus gustos y en esta ventana se podrá ver la recomendación aplicada a su grupo correspondiente y la comparación de recomendaciones respecto a los otros grupos."
+		font_size: 17
+		color: (1,1,1,1)
+		pos: -30, 290
+		halign: 'left'
+		text_size: 500, 450
